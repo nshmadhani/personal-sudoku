@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="A minimal, cute Sudoku game with notes">
+  <meta name="theme-color" content="#1E90FF">
+
+  <!-- PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Sudoku">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Play Screen -->
+    <div id="play-screen" class="play-screen">
+      <h1>Sudoku</h1>
+      <div class="difficulty-selector">
+        <button class="diff-btn active" data-level="easy">Easy</button>
+        <button class="diff-btn" data-level="medium">Medium</button>
+        <button class="diff-btn" data-level="hard">Hard</button>
+        <button class="diff-btn" data-level="insane">Insane</button>
+      </div>
+      <button id="start-btn" class="play-btn">Play</button>
+      <button id="history-btn" class="history-btn">History</button>
+    </div>
+
+    <!-- History Screen -->
+    <div id="history-screen" class="hidden">
+      <div class="history-container">
+        <div class="history-header">
+          <button id="back-btn" class="back-btn">← Back</button>
+          <h2>Game History</h2>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="hidden">
+      <header>
+        <div class="game-header">
+          <h1>Sudoku</h1>
+          <div class="timer-section">
+            <div id="timer" class="timer">00:00</div>
+            <button id="pause-btn" class="pause-btn" title="Pause">‖</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="game-container">
+          <div id="sudoku-grid" class="grid"></div>
+
+          <div class="controls">
+            <div class="action-buttons">
+              <button id="undo-btn" class="action-btn" title="Undo">↶</button>
+              <button id="notes-btn" class="action-btn" title="Notes">✎</button>
+              <button id="erase-btn" class="action-btn" title="Erase">✕</button>
+            </div>
+
+            <div class="number-buttons">
+              <button class="num-btn" data-num="1">1</button>
+              <button class="num-btn" data-num="2">2</button>
+              <button class="num-btn" data-num="3">3</button>
+              <button class="num-btn" data-num="4">4</button>
+              <button class="num-btn" data-num="5">5</button>
+              <button class="num-btn" data-num="6">6</button>
+              <button class="num-btn" data-num="7">7</button>
+              <button class="num-btn" data-num="8">8</button>
+              <button class="num-btn" data-num="9">9</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
